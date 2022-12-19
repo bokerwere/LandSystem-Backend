@@ -34,7 +34,6 @@ public class LandBuyerController {
 
         return new ApiResponse<>(landBuyerModels.getTotalPages(),landBuyerModels);
 
-
     }
 
 }

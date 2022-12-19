@@ -21,9 +21,9 @@ public class NextKinEntity extends BaseEntity {
     private String middleName;
     private String surname;
     @Column(name = "owner_id")
-    private Long ownerId;
+    private String ownerId;
     @Column(name = "buyer_id_no")
-    private Long buyerId;
+    private String buyerId;
     private String BirthNo;
     private String IdNumber;
     private Long age;

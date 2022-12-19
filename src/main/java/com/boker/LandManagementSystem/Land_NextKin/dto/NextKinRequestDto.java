@@ -9,8 +9,8 @@ public class NextKinRequestDto {
     private String firstName;
     private String middleName;
     private String surname;
-    private Long ownerId;
-    private Long buyerId;
+    private String ownerId;
+    private String buyerId;
     private String birthNo;
     private String IdNumber;
     private Long age;

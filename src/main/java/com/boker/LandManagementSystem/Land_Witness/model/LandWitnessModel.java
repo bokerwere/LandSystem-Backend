@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "land_witness")
-public class LandOwnerModel extends BaseEntity {
+public class LandWitnessModel extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "land_witness_id")
