@@ -6,6 +6,7 @@ import com.boker.LandManagementSystem.Commons.Gender;
 import com.boker.LandManagementSystem.Land_Details.model.LandModel;
 import com.boker.LandManagementSystem.Land_NextKin.model.NextKinModel;
 import com.boker.LandManagementSystem.Land_Owner.dto.response.LandOwnerResponseDto;
+import com.boker.LandManagementSystem.Land_Witness.model.LandWitnessModel;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -47,7 +48,7 @@ public class OwnerModel extends BaseEntity {
     private List<NextKinModel> nextKin = new ArrayList<>();
     @OneToMany(targetEntity = LandModel.class, cascade = CascadeType.ALL, mappedBy = "ownerId")
     private Set<LandModel> landModel = new HashSet<>();
-
-
+    @OneToMany(mappedBy = "landOwnerId")
+    private List<LandWitnessModel> landWitnessModelList;
 
 }

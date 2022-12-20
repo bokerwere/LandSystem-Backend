@@ -12,6 +12,5 @@ public interface LandService {
     LandModel createNewLand(LandRequestDto landRequestDto);
     Page<LandModel>findAll(Pageable pageable);
     LandEntity updateLand(LandRequestDto landRequestDto);
-
     String deleteLand(UUID publicId);
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("land/")
+@RequestMapping("land/v1/")
 @RequiredArgsConstructor
 public class NextKinController {
     private  final NextKinService nextKinService;
