@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("land/")
+@RequestMapping("land/v1/")
 @RequiredArgsConstructor
 public class LandController {
 

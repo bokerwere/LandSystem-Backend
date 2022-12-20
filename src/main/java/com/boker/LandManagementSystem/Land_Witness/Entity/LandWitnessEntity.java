@@ -3,7 +3,10 @@ package com.boker.LandManagementSystem.Land_Witness.Entity;
 import com.boker.LandManagementSystem.Commons.BaseEntity;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by Boker
@@ -14,11 +17,10 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "land_witness")
-public class LandWitnessEntity  extends BaseEntity {
+public class LandWitnessEntity extends BaseEntity {
     @Id
-    @GeneratedValue
     @Column(name = "land_witness_id")
-    private Long landWitnessId;
+    private String landWitnessId;
     @Column(name = "witness_first_name")
     private String witnessFirstName;
     @Column(name = "witness_last_name")
@@ -33,7 +35,6 @@ public class LandWitnessEntity  extends BaseEntity {
     //   Foreign key referencing land Buyer
     @Column(name = "land_buyer_id")
     private Long landBuyerId;
-    @Column(name = "land_reg_number")
-    private String landRegistrationNumber;
+
 
 }

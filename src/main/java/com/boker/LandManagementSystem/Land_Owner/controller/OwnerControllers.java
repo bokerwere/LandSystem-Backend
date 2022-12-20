@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/land")
+@RequestMapping("/land/v1")
 public class OwnerControllers {
     @Autowired
     private OwnerService ownerService;

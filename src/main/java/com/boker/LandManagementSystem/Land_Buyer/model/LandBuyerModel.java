@@ -5,6 +5,7 @@ import com.boker.LandManagementSystem.Commons.BaseEntity;
 import com.boker.LandManagementSystem.Commons.Gender;
 import com.boker.LandManagementSystem.Land_Details.model.LandModel;
 import com.boker.LandManagementSystem.Land_NextKin.model.NextKinModel;
+import com.boker.LandManagementSystem.Land_Witness.model.LandWitnessModel;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -40,5 +41,7 @@ public class LandBuyerModel extends BaseEntity implements Serializable {
     private Address address;
     @OneToMany(targetEntity =NextKinModel.class,mappedBy = "buyerId" ,cascade=CascadeType.ALL)
     List<NextKinModel> nextKinModelList;
+    @OneToMany(mappedBy = "landBuyerId")
+    List<LandWitnessModel>landWitnessModelList;
 
 }
