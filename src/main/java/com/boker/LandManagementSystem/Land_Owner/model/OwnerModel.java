@@ -5,7 +5,6 @@ import com.boker.LandManagementSystem.Commons.BaseEntity;
 import com.boker.LandManagementSystem.Commons.Gender;
 import com.boker.LandManagementSystem.Land_Details.model.LandModel;
 import com.boker.LandManagementSystem.Land_NextKin.model.NextKinModel;
-import com.boker.LandManagementSystem.Land_Owner.dto.response.LandOwnerResponseDto;
 import com.boker.LandManagementSystem.Land_Witness.model.LandWitnessModel;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
@@ -16,7 +15,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 @Data
 @DynamicUpdate
 @DynamicInsert
@@ -26,22 +24,22 @@ public class OwnerModel extends BaseEntity {
     @Id
     @Column(name = "owner_owner_id")
     private String ownerId;
-    @Column(name="owner_first_name")
+    @Column(name = "owner_first_name")
     private String firstName;
-    @Column(name="owner_middle_name")
-    private String  middleName;
+    @Column(name = "owner_middle_name")
+    private String middleName;
     @Column(name = "owner_sur_name")
     private String surname;
     @Column(name = "owner_phone_no")
-    private String  phoneNumber;
+    private String phoneNumber;
     @Column(name = "owner_email")
-    private String  email;
-    @Column(name="owner_nationality")
-    private  String nationality;
+    private String email;
+    @Column(name = "owner_nationality")
+    private String nationality;
     @Embedded
     private Address address;
     @Enumerated(EnumType.STRING)
-    @Column(name="owner_gender")
+    @Column(name = "owner_gender")
     private Gender gender;
     @OneToMany(targetEntity = NextKinModel.class, cascade = CascadeType.ALL, mappedBy = "ownerId")
     //@JoinColumn(name = "owner_id",referencedColumnName = "id",updatable = true)

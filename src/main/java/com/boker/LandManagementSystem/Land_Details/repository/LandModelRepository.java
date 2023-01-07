@@ -9,9 +9,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 
-public interface LandModelRepository extends JpaRepository<LandModel, String> {
+public interface LandModelRepository extends JpaRepository<LandModel, Long> {
 
-    LandModel findByLandRegistrationNumber(String landRegNo);
+    LandModel findByLandRegistrationNumber(Long landRegNo);
 
     Page<LandModel> findAll(Pageable pageable);
 

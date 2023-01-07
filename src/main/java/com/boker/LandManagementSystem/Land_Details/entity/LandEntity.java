@@ -2,18 +2,21 @@ package com.boker.LandManagementSystem.Land_Details.entity;
 
 import com.boker.LandManagementSystem.Commons.Address;
 import com.boker.LandManagementSystem.Commons.BaseEntity;
+import com.boker.LandManagementSystem.imageUpload.ImageModel;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "lands")
 public class LandEntity extends BaseEntity {
     @Id
-    @Column(name = "land_reg_no ")
-    private String landRegistrationNumber;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "land_reg_no")
+    private Long landRegistrationNumber;
     @Column(name = "land_plot_no")
     private String landPlotNumber;
     @Column(name = "land_size")
@@ -30,5 +33,10 @@ public class LandEntity extends BaseEntity {
     private String regFormImage;
     @Embedded
     private Address address;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "images", joinColumns = {@JoinColumn(name = "land_reg_no")},
+            inverseJoinColumns = {@JoinColumn(name = "image_id")})
+    private Set<ImageModel> landImages;
+
 
 }

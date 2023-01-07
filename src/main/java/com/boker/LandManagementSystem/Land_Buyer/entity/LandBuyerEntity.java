@@ -35,5 +35,4 @@ public class LandBuyerEntity extends BaseEntity implements Serializable {
     private  String nationality;
     @Embedded
     private Address address;
-
 }
